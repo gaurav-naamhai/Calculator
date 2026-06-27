@@ -1,3 +1,3 @@
 let display=documen.getElementById("displayy")
-emptySpace=""
+zemptySpace=""
 valueInConsideraiton=""

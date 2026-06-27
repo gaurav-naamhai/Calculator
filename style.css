@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:bisque;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.mainbody {
+    height:auto;
+    width: 300px;
+    border: 3px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #0a0a0a;
+    display: block;
+}
+.etxarea{
+    height: 80px;
+    width: 300px;
+}
+#displayy {
+    width: 100%;
+    height: 100%;
+    box-sizing:border-box;
+    text-align: right;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600px;
+    font-size: 60px;
+}
+.display{
+    display: inline;
+}
+.button_operators{
+    display: inline;
+}
+.buttons_digits{
+    height: 200px;
+    width: 150px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.row {
+    display: flex; /* Makes buttons sit in a line */
+}
+
+.row button {
+    flex: 1; /* All buttons take 1 "share" of space */
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+/* Make AC and Del take 2 "shares" each */
+.btn-big {
+    flex: 2 !important; 
+    background-color: #ffccbc;
+}
+
+/* Make the = sign take 2 "shares" */
+.btn-equal {
+    flex: 2 !important;
+    background-color: #4CAF50;
+    color: white;
+}
+.op {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}

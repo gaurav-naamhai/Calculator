@@ -1,7 +1,7 @@
 let primno="";
 let secno="";
 let operater=""
-
+let answer=""
 
 const btn1=document.getElementById("1");
 const btn2=document.getElementById("2");
@@ -42,17 +42,22 @@ function division(no1,no2){
 }
 eql.addEventListener("click",()=>{{
 if(operater=="+"){
-   console.log(add(primno,secno)) ;
+  answer=add(primno,secno);
+   console.log(answer) ;
 }
 else if(operater=="-"){
-    console.log(subtract(primno,secno)) ;
+    answer=subtract(primno,secno);
+    console.log(answer) ;
 }
 else if(operater=="*"){
-    console.log(multiply(primno,secno)) ;
+    answer=multiply(primno,secno);
+    console.log(answer) ;
 }
 else if(operater=="/"){
-    console.log(division(primno,secno)) ;
-}} ; console.log("="); return;})}
+    answer=division(primno,secno);
+    console.log(answer) ;
+
+}} ; primno=answer; secno=""; operater="" ; return;})}
 btn1.addEventListener("click",()=>{returnIt("1"); console.log("1"); return;})
 btn2.addEventListener("click",()=>{returnIt("2"); console.log("2"); return;})
 btn3.addEventListener("click",()=>{returnIt("3"); console.log("3"); return;})

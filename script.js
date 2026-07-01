@@ -1,8 +1,8 @@
-let primno="";
-let secno="";
+let primno=""
+let secno=""
 let operater=""
 let answer=""
-
+const display=document.getElementById("displayy");
 const btn1=document.getElementById("1");
 const btn2=document.getElementById("2");
 const btn3=document.getElementById("3");
@@ -21,12 +21,13 @@ const minus=document.getElementById("-");
 const divide=document.getElementById("/");
 const multiple=document.getElementById("*");
 function returnIt(no){
-    if(primno==""){ 
-        primno=no;
-    } else {
-        secno=no;
-    }
-}
+    if(operater==""){ 
+        primno+=no;
+        display.value=primno;
+    }else {
+        secno+=no;
+        display.value=secno
+    }}
 function operate(){ 
 function add(no1,no2){
     return parseInt(no1) + parseInt(no2);
@@ -38,38 +39,45 @@ function multiply(no1,no2){
     return parseInt(no1) * parseInt(no2);
 }
 function division(no1,no2){
+    if(no2=="0"){
+         primno="";secno=""; operater="";
+    } else {
     return parseFloat(no1)/parseFloat(no2);
-}
+}}
+acc.addEventListener("click",()=>{display.value=""; primno="";secno=""; operater="" ; return;})
 eql.addEventListener("click",()=>{{
 if(operater=="+"){
+    if(secno==""){secno=primno}
   answer=add(primno,secno);
-   console.log(answer) ;
+   display.value=Math.round(answer * 100) / 100;
 }
 else if(operater=="-"){
+    if(secno==""){secno=primno}
     answer=subtract(primno,secno);
-    console.log(answer) ;
+  display.value=Math.round(answer * 100) / 100;
 }
 else if(operater=="*"){
+    if(secno==""){secno=primno}
     answer=multiply(primno,secno);
-    console.log(answer) ;
+    display.value=Math.round(answer * 100) / 100;
 }
 else if(operater=="/"){
+    if(secno==""){secno=primno}
     answer=division(primno,secno);
-    console.log(answer) ;
-
-}} ; primno=answer; secno=""; operater="" ; return;})}
-btn1.addEventListener("click",()=>{returnIt("1"); console.log("1"); return;})
-btn2.addEventListener("click",()=>{returnIt("2"); console.log("2"); return;})
-btn3.addEventListener("click",()=>{returnIt("3"); console.log("3"); return;})
-btn4.addEventListener("click",()=>{returnIt("4"); console.log("4"); return;})
-btn5.addEventListener("click",()=>{returnIt("5"); console.log("5"); return;})
-btn6.addEventListener("click",()=>{returnIt("6"); console.log("6"); return;})
-btn7.addEventListener("click",()=>{returnIt("7"); console.log("7"); return;})
-btn8.addEventListener("click",()=>{returnIt("8"); console.log("8"); return;})
-btn9.addEventListener("click",()=>{returnIt("9"); console.log("9"); return;})
-btn0.addEventListener("click",()=>{returnIt("0"); console.log("0"); return;})
-plus.addEventListener("click",()=>{operater="+"; console.log("+"); return;})
-minus.addEventListener("click",()=>{operater="-"; console.log("-"); return;})
-divide.addEventListener("click",()=>{operater="/"; console.log("/"); return;})
-multiple.addEventListener("click",()=>{operater="*"; console.log("*"); return;})
+   display.value=Math.round(answer * 100) / 100;
+}} ; primno=String(answer); secno=""; operater="" ; return;})}
+btn1.addEventListener("click",()=>{returnIt("1"); return;})
+btn2.addEventListener("click",()=>{returnIt("2"); return;})
+btn3.addEventListener("click",()=>{returnIt("3"); return;})
+btn4.addEventListener("click",()=>{returnIt("4"); return;})
+btn5.addEventListener("click",()=>{returnIt("5"); return;})
+btn6.addEventListener("click",()=>{returnIt("6"); return;})
+btn7.addEventListener("click",()=>{returnIt("7"); return;})
+btn8.addEventListener("click",()=>{returnIt("8"); return;})
+btn9.addEventListener("click",()=>{returnIt("9"); return;})
+btn0.addEventListener("click",()=>{returnIt("0"); return;})
+plus.addEventListener("click",()=>{operater="+";  return;})
+minus.addEventListener("click",()=>{operater="-"; return;})
+divide.addEventListener("click",()=>{operater="/"; return;})
+multiple.addEventListener("click",()=>{operater="*"; return;})
 operate();

@@ -26,9 +26,19 @@ function returnIt(no){
         display.value=primno;
     }else {
         secno+=no;
-        display.value=secno
+        display.value=secno;
     }}
+
 function operate(){ 
+function deleted(){
+    if(operater=="")
+{
+    primno=primno.slice(0,-1);
+    display.value=primno;
+}else {
+    secno=secno.slice(0,-1);
+    display.value=secno;
+}}
 function add(no1,no2){
     return parseInt(no1) + parseInt(no2);
 }
@@ -40,10 +50,11 @@ function multiply(no1,no2){
 }
 function division(no1,no2){
     if(no2=="0"){
-         primno="";secno=""; operater="";
+         primno="";secno=""; operater=""; display.value="Hehe,dumb!!";
     } else {
     return parseFloat(no1)/parseFloat(no2);
 }}
+del.addEventListener("click",deleted)
 acc.addEventListener("click",()=>{display.value=""; primno="";secno=""; operater="" ; return;})
 eql.addEventListener("click",()=>{{
 if(operater=="+"){
@@ -65,7 +76,15 @@ else if(operater=="/"){
     if(secno==""){secno=primno}
     answer=division(primno,secno);
    display.value=Math.round(answer * 100) / 100;
-}} ; primno=String(answer); secno=""; operater="" ; return;})}
+}}
+if(answer===undefined ) {
+primno=""; secno=""; operater="" ; 
+return;
+}else {
+primno=String(answer); secno=""; operater="" ; 
+return;
+}
+})}
 btn1.addEventListener("click",()=>{returnIt("1"); return;})
 btn2.addEventListener("click",()=>{returnIt("2"); return;})
 btn3.addEventListener("click",()=>{returnIt("3"); return;})
